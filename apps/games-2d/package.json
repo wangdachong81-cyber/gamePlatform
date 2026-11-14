@@ -1,0 +1,9 @@
+{
+  "name": "@youxi/games-2d",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": { "dev": "vite --host 127.0.0.1 --port 5174 --strictPort", "typecheck": "tsc --noEmit", "build": "vite build" },
+  "dependencies": { "@youxi/game-sdk": "*", "react": "^19.3.1", "react-dom": "^19.3.1", "phaser": "^4.2.1" },
+  "devDependencies": { "@vitejs/plugin-react": "^6.3.0", "@types/react": "^19.0.0", "@types/react-dom": "^19.0.0" }
+}

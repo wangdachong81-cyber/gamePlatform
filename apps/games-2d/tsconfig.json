@@ -1,0 +1,1 @@
+{ "extends": "../../tsconfig.base.json", "include": ["src", "../../packages/game-sdk/src", "../../packages/contracts/src"] }

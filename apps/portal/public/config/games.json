@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "apps": {
+    "games-2d": {
+      "name": "2D 乐游场",
+      "dimension": "2d",
+      "entry": "/games-2d/"
+    },
+    "games-3d": {
+      "name": "3D 新宇宙",
+      "dimension": "3d",
+      "entry": "/games-3d/"
+    }
+  },
+  "games": [
+    {
+      "id": "star-catcher",
+      "appId": "games-2d",
+      "name": "星星收集员",
+      "description": "移动小方块，收集散落的星星。",
+      "icon": "/icons/star.svg",
+      "category": "休闲街机",
+      "tags": [
+        "方向键 / WASD",
+        "触屏拖动"
+      ],
+      "openMode": "embedded",
+      "enabled": true,
+      "sort": 100,
+      "accent": "mint",
+      "status": "playable"
+    },
+    {
+      "id": "brick-breaker",
+      "appId": "games-2d",
+      "name": "弹球奇遇",
+      "description": "下一站，打破所有无聊。",
+      "icon": "/icons/blocks.svg",
+      "category": "街机闯关",
+      "tags": [
+        "规划中"
+      ],
+      "openMode": "embedded",
+      "enabled": true,
+      "sort": 80,
+      "accent": "orange",
+      "status": "coming-soon"
+    },
+    {
+      "id": "island-guard",
+      "appId": "games-2d",
+      "name": "小岛守卫",
+      "description": "小小岛屿，大大的守护计划。",
+      "icon": "/icons/island.svg",
+      "category": "策略塔防",
+      "tags": [
+        "规划中"
+      ],
+      "openMode": "embedded",
+      "enabled": true,
+      "sort": 60,
+      "accent": "blue",
+      "status": "coming-soon"
+    },
+    {
+      "id": "jimao",
+      "appId": "games-3d",
+      "name": "几猫国产3A大作",
+      "description": "潜入几猫港区，切断中继、迎战无人机与机械猎犬，完成撤离。",
+      "icon": "/icons/jimao.svg",
+      "category": "第一人称射击",
+      "tags": [
+        "Three.js",
+        "WASD / 鼠标",
+        "新标签页"
+      ],
+      "openMode": "new-tab",
+      "enabled": true,
+      "sort": 120,
+      "accent": "orange",
+      "status": "playable"
+    },
+    {
+      "id": "crystal-world",
+      "appId": "games-3d",
+      "name": "浮空晶境",
+      "description": "点击旋转的水晶，收集空间能量。",
+      "icon": "/icons/crystal.svg",
+      "category": "空间探索",
+      "tags": [
+        "拖动视角",
+        "点击水晶"
+      ],
+      "openMode": "embedded",
+      "enabled": true,
+      "sort": 100,
+      "accent": "purple",
+      "status": "playable"
+    },
+    {
+      "id": "neon-racer",
+      "appId": "games-3d",
+      "name": "霓虹疾驰",
+      "description": "在光影交错的赛道中一路向前。",
+      "icon": "/icons/racer.svg",
+      "category": "竞速驾驶",
+      "tags": [
+        "规划中"
+      ],
+      "openMode": "new-tab",
+      "enabled": true,
+      "sort": 80,
+      "accent": "blue",
+      "status": "coming-soon"
+    },
+    {
+      "id": "space-portal",
+      "appId": "games-3d",
+      "name": "时空之门",
+      "description": "穿过这道门，另一个世界正在等待。",
+      "icon": "/icons/portal.svg",
+      "category": "冒险解谜",
+      "tags": [
+        "规划中"
+      ],
+      "openMode": "embedded",
+      "enabled": true,
+      "sort": 60,
+      "accent": "orange",
+      "status": "coming-soon"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "@youxi/portal",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5173 --strictPort",
+    "typecheck": "vue-tsc --noEmit",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@youxi/contracts": "*",
+    "vue": "^3.5.45",
+    "vue-router": "^4.6.0",
+    "gsap": "^3.14.0",
+    "wujie": "^2.1.0",
+    "wujie-vue3": "^2.1.0",
+    "@lucide/vue": "^1.72.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.0",
+    "vue-tsc": "^3.1.0"
+  }
+}

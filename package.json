@@ -1,0 +1,24 @@
+{
+  "name": "youxi-platform",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n portal,2d,3d -c cyan,yellow,magenta \"npm run dev -w @youxi/portal\" \"npm run dev -w @youxi/games-2d\" \"npm run dev -w @youxi/games-3d\"",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test:e2e": "playwright test",
+    "build": "npm run typecheck && npm run build --workspaces --if-present && node scripts/assemble.mjs",
+    "preview": "vite preview --host 127.0.0.1 --port 4173 --outDir dist"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.1",
+    "@types/node": "^24.0.0",
+    "concurrently": "^9.2.1",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.8"
+  }
+}
