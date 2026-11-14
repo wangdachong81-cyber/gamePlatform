@@ -101,17 +101,19 @@
       "id": "neon-racer",
       "appId": "games-3d",
       "name": "霓虹疾驰",
-      "description": "在光影交错的赛道中一路向前。",
+      "description": "夜城赛道，三圈定胜负。氮气全开，甩开三台对手冲过终点。",
       "icon": "/icons/racer.svg",
       "category": "竞速驾驶",
       "tags": [
-        "规划中"
+        "方向键 / WASD",
+        "SHIFT 氮气",
+        "3 圈计时赛"
       ],
-      "openMode": "new-tab",
+      "openMode": "embedded",
       "enabled": true,
-      "sort": 80,
+      "sort": 95,
       "accent": "blue",
-      "status": "coming-soon"
+      "status": "playable"
     },
     {
       "id": "space-portal",
