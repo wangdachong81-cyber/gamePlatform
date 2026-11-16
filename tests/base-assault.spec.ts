@@ -1,0 +1,40 @@
+import { test, expect } from '@playwright/test';
+
+test('纵深突击从大厅新标签启动，支持射击、暂停、重开和静音', async ({ page, context }) => {
+  const errors: string[] = [];
+  await page.goto('/?world=3d');
+  const opened = context.waitForEvent('page');
+  await page.getByRole('button', { name: /纵深突击/ }).click();
+  const game = await opened;
+  game.on('pageerror', error => errors.push(error.message));
+  await game.bringToFront();
+  await expect(game).toHaveURL(/#\/games\/base-assault$/);
+  await expect(game.getByRole('button', { name: '开始突击' })).toBeVisible();
+  await game.screenshot({ path: 'artifacts/base-assault-title.png' });
+  await game.getByRole('button', { name: '开始突击' }).click();
+  await expect(game.locator('.assault-game')).toHaveAttribute('data-phase', 'playing');
+  await expect(game.getByRole('status')).toContainText('清除守卫 2');
+  await game.keyboard.down('Space');
+  await game.waitForTimeout(400);
+  await game.keyboard.up('Space');
+  await expect(game.locator('.assault-score strong')).toHaveText('000000');
+  await game.screenshot({ path: 'artifacts/base-assault-playing.png' });
+  // Release browser pointer lock before clicking the overlay controls.
+  await game.keyboard.press('Escape');
+  await expect(game.getByRole('button', { name: '继续行动' })).toBeVisible();
+  await game.getByRole('button', { name: '继续行动' }).click();
+  await expect(game.locator('.assault-game')).toHaveAttribute('data-phase', 'playing');
+  await game.keyboard.press('KeyR');
+  await expect(game.locator('.assault-game')).toHaveAttribute('data-room', '0');
+  await game.keyboard.down('ArrowLeft');
+  await game.waitForTimeout(200);
+  await game.keyboard.up('ArrowLeft');
+  await game.keyboard.down('Space');
+  await game.waitForTimeout(1200);
+  await game.keyboard.up('Space');
+  await expect.poll(async () => Number(await game.locator('.assault-score strong').textContent())).toBeGreaterThan(0);
+  await game.keyboard.press('KeyM');
+  await expect(game.getByRole('button', { name: '开启声音' })).toBeAttached();
+  expect(errors).toEqual([]);
+  await game.close();
+});

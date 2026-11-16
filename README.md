@@ -51,6 +51,8 @@ npm run dev
 
 ## 开发新游戏
 
+新增「纵深突击」：Three.js 第一人称基地闯关，三个常规房间加机械核心 Boss。WASD 移动，鼠标或方向键瞄准，左键或空格连射，ESC 暂停，R 重开，M 静音。清守卫解除核心护盾，摧毁核心后向前过门，获得回血和散弹强化。支持触屏按钮，默认在新标签页打开。源码位于 `apps/games-3d/src/games/base-assault/`；运行 `npm run test:base-assault` 验证完整关卡规则。
+
 1. 在对应子平台的 `src/games/<game-id>/` 下创建游戏组件，在 `src/registry.ts` 中懒加载注册。
 2. 使用 `createGameClient(gameId)`：资源和场景就绪后调用 `ready()`，成绩变化调用 `score()`；订阅 `pause`、`resume`、`restart`。
 3. React effect 卸载时取消订阅并销毁引擎，3D 游戏还需释放场景和 GPU 资源。
@@ -73,3 +75,7 @@ npm run preview
 生产部署可以整体托管 `dist/`，也可以独立发布三个应用并通过网关映射路径。改用独立域名时修改子平台的 Vite `base` 和 JSON 入口，并为游戏资源配置允许主平台来源的 CORS。
 
 目前是前端基础工程，收藏、账号、云存档和排行榜后端尚未实现。
+
+## 贪吃蛇
+
+2D 列表新增 Phaser 贪吃蛇，默认内嵌运行。支持方向键 / WASD、棋盘滑动和方向按钮，空格暂停、R 重开。包含三档起始速度、吃果子加速、本地最高分、撞墙撞身失败和满格胜利；离开页面自动暂停并在卸载时销毁引擎。源码：`apps/games-2d/src/games/snake/`。运行 `npm run test:snake` 校验规则。

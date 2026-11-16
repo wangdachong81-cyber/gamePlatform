@@ -14,6 +14,24 @@
   },
   "games": [
     {
+      "id": "snake",
+      "appId": "games-2d",
+      "name": "贪吃蛇",
+      "description": "吃果子、长身体，越吃越快。挑战最高分，小心撞墙和自己的尾巴。",
+      "icon": "/icons/snake.svg",
+      "category": "经典休闲",
+      "tags": [
+        "方向键 / WASD",
+        "触屏滑动",
+        "本地最高分"
+      ],
+      "openMode": "embedded",
+      "enabled": true,
+      "sort": 130,
+      "accent": "mint",
+      "status": "playable"
+    },
+    {
       "id": "star-catcher",
       "appId": "games-2d",
       "name": "星星收集员",
@@ -130,6 +148,24 @@
       "sort": 60,
       "accent": "orange",
       "status": "coming-soon"
+    },
+    {
+      "id": "base-assault",
+      "appId": "games-3d",
+      "name": "纵深突击",
+      "description": "第一人称基地突入。清除守卫、摧毁核心、逐门推进，击败最终机械心脏。",
+      "icon": "/icons/base-assault.svg",
+      "category": "街机射击",
+      "tags": [
+        "第一人称",
+        "四区闯关",
+        "WASD / 鼠标"
+      ],
+      "openMode": "new-tab",
+      "enabled": true,
+      "sort": 130,
+      "accent": "orange",
+      "status": "playable"
     }
   ]
 }
